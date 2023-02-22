@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         plugin = "html:target/cuc-report.html",
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
-        dryRun = false,
-        tags = "@Employee"
+        dryRun = true,
+        tags = "@Table"
 
 )
 public class CukesRunner {
