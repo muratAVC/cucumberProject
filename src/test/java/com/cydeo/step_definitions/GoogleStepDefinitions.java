@@ -3,13 +3,10 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.GoogleSearchPage;
 import com.cydeo.utilities.Driver;
 import com.cydeo.utilities.DriverBase;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
 public class GoogleStepDefinitions extends DriverBase {
     GoogleSearchPage googleSearchPage=new GoogleSearchPage();
