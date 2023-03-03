@@ -37,10 +37,13 @@ public class WebTableOrder_StepDefinitions extends DriverBase {
     public void user_selects_product_type(String string) {
         Select select=new Select(dataTablePage.productType);
         List<WebElement> elementList=select.getOptions();
+        int count=0;
         for (WebElement each: elementList) {
-            if (each.equals(string)){
-                select.selectByValue(string);
+            if (each.getText().equals(string)){
+                //select.selectByValue(string);
+                select.selectByIndex(count);
             }
+            count++;
         }
     }
     @When("user enters quantity {string}")
@@ -72,7 +75,6 @@ public class WebTableOrder_StepDefinitions extends DriverBase {
     @When("user selects credit card type {string}")
     public void user_selects_credit_card_type(String string) {
         //BrowserUtils.clickRadioButton(dataTablePage.cardType,string);
-
         for (WebElement each: dataTablePage.cardType) {
             if (each.getText().equals(string)){
                 each.click();
@@ -93,7 +95,7 @@ public class WebTableOrder_StepDefinitions extends DriverBase {
     }
     @Then("user should see {string} in first row of the web table")
     public void user_should_see_in_first_row_of_the_web_table(String string) {
-        Assert.assertTrue(dataTablePage.tableFirst.isDisplayed());
+        Assert.assertEquals(dataTablePage.tableFirst.getText(),string);
     }
 
     @Then("user can logout")

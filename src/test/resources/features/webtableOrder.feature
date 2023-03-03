@@ -34,8 +34,8 @@ Feature: Web table user order feature
     Then user can logout
 
       Examples: Famous Female Scientists
-        | productType | quantity | customerName | street | city | state | zipCode | cardType | cardNo           | expDate | expectedName | s |
-        | Familybea   | 3        | murat avci   | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | murat avci   | d |
-        | Familybea   | 2        | semra avci   | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 17/25   | murat avci   | f |
-        | Familybea   | 4        | ahmet Selim  | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | ahmet Selim  |g  |
+        | productType | quantity | customerName    | street | city | state | zipCode | cardType | cardNo           | expDate | expectedName    | s |
+        | Familybea   | 3        | Kemali Ataturk  | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | Kemal Ataturk   | d |
+        | Familybea   | 2        | Baraki Obama    | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 17/25   | Barak Obama     | f |
+        | Familybea   | 4        | Albert Ainstain | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | Albert Ainstain | g |
 
