@@ -9,7 +9,7 @@ public class ConfigurationReader {
     static {
         FileInputStream fileInput= null;
         try {
-            fileInput = new FileInputStream("D:\\JavaProje\\cydio-cucumber-junit\\configuration.properties");
+            fileInput = new FileInputStream("configuration.properties");
             properties.load(fileInput);
             fileInput.close();
         } catch (IOException e) {
