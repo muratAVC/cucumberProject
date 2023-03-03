@@ -88,15 +88,16 @@ public class Driver {
                     e.printStackTrace();
                 }
                 break;
-
-
         }
-
-
-
-
         }
         return driverPool.get();
+    }
+
+    public static void closeDriver(){
+        if (driverPool.get() != null){
+            driverPool.get().quit(); // this line will terminate the existing session. value will not even be null
+            driverPool.remove();
+        }
     }
 
     public static WebDriver getDriver(String browserType) {

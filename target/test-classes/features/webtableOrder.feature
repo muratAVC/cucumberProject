@@ -1,5 +1,10 @@
 Feature: Web table user order feature
 
+  Background: User should be able to place order and order seen in web table
+    Given user is already logged in
+    When user is login in order page
+
+
 
   Scenario: User should be able to place order and order seen in web table
     Given user is already logged in and on order page
@@ -16,7 +21,7 @@ Feature: Web table user order feature
     And user enters process order button
     Then user should see "Sherlock Holmes" in first row of the web table
 
-    @Run
+
   Scenario Outline: User should be able to place order and order seen in web table
     Given user is already logged in and on order page
     And user selects product type "<productType>"
@@ -33,9 +38,10 @@ Feature: Web table user order feature
     And user should see "<expectedName>" in first row of the web table
     Then user can logout
 
+    @Run
       Examples: Famous Female Scientists
         | productType | quantity | customerName    | street | city | state | zipCode | cardType | cardNo           | expDate | expectedName    | s |
-        | Familybea   | 3        | Kemali Ataturk  | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | Kemal Ataturk   | d |
-        | Familybea   | 2        | Baraki Obama    | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 17/25   | Barak Obama     | f |
+        | Familybea   | 3        | Kemal Ataturk   | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | Kemal Ataturk   | d |
+        | Familybea   | 2        | Barak Obama     | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 17/25   | Barak Obama     | f |
         | Familybea   | 4        | Albert Ainstain | cart   | curt | tur   | 12354   | Visa     | 1111222233334444 | 15/25   | Albert Ainstain | g |
 

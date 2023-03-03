@@ -1,16 +1,15 @@
 package com.cydeo.pages;
 
-import com.cydeo.utilities.DriverBase;
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class DataTablePage extends DriverBase {
+public class DataTablePage {
     public DataTablePage(){
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
 @FindBy(name = "username")

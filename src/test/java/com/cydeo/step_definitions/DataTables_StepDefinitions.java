@@ -2,7 +2,7 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.DataTablePage;
 import com.cydeo.pages.DropDrownPage;
-import com.cydeo.utilities.DriverBase;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DataTables_StepDefinitions extends DriverBase {
+public class DataTables_StepDefinitions {
     DataTablePage dataTablePage=new DataTablePage();
     DropDrownPage dropDrownPage=new DropDrownPage();
 
@@ -25,7 +25,7 @@ public class DataTables_StepDefinitions extends DriverBase {
     }
     @Given("user is on the login page of web table app")
     public void user_is_on_the_login_page_of_web_table_app() {
-        driver.get("https://web-table-2.cydeo.com/login");
+        Driver.getDriver().get("https://web-table-2.cydeo.com/login");
     }
     @When("user enters user name {string}")
     public void user_enters_user_name(String string) {
@@ -41,7 +41,7 @@ public class DataTables_StepDefinitions extends DriverBase {
     }
     @Then("user should see url contains orders")
     public void user_should_see_url_contains_orders() {
-        Assert.assertEquals("https://web-table-2.cydeo.com/orders",driver.getCurrentUrl());
+        Assert.assertEquals("https://web-table-2.cydeo.com/orders",Driver.getDriver().getCurrentUrl());
     }
 
     @When("User enters below credentials")
@@ -54,7 +54,7 @@ public class DataTables_StepDefinitions extends DriverBase {
 
     @Given("User is on the dropdowns page of practice tool")
     public void user_is_on_the_dropdowns_page_of_practice_tool() {
-        driver.get("https://practice.cydeo.com/dropdown ");
+        Driver.getDriver().get("https://practice.cydeo.com/dropdown ");
     }
     @Then("User should see below info in month dropdown")
     public void user_should_see_below_info_in_month_dropdown(List<String> months) {

@@ -1,11 +1,11 @@
 package com.cydeo.step_definitions;
 
-import com.cydeo.utilities.DriverBase;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-public class Hooks extends DriverBase {
+public class Hooks {
     @Before(order = 1)
     public void setupScenario(){
         //System.out.println("before of method");
@@ -22,12 +22,12 @@ public class Hooks extends DriverBase {
     @After
     public void teardownScenario(Scenario scenario){
         if (scenario.isFailed()){
-            byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png",scenario.getName());
         }
 
 
-        //driver.close();
+        Driver.closeDriver();
 
     }
 

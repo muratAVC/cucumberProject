@@ -1,8 +1,7 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.DataTablePage;
-import com.cydeo.utilities.BrowserUtils;
-import com.cydeo.utilities.DriverBase;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,25 +11,40 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class WebTableOrder_StepDefinitions extends DriverBase {
+public class WebTableOrder_StepDefinitions {
 
     DataTablePage dataTablePage =new DataTablePage();
+
+    @Given("user is already logged in")
+    public void user_is_already_logged_in() {
+        /*driver.get("https://web-table-2.cydeo.com/login");
+        dataTablePage.inputBox.sendKeys("Test");
+        dataTablePage.passBox.sendKeys("Tester");
+        dataTablePage.buttonLogin.click();*/
+    }
+    @When("user is login in order page")
+    public void user_is_login_in_order_page() {
+        //dataTablePage.orderButton.click();
+    }
 
 
     @Given("user is already logged in and on order page")
     public void user_is_already_logged_in_and_on_order_page() {
-        driver.get("https://web-table-2.cydeo.com/login");
+        Driver.getDriver();
+        Driver.getDriver().get("https://web-table-2.cydeo.com/login");
+
+        /*
         try{
             if(dataTablePage.orderButton.isDisplayed()){
                 dataTablePage.orderButton.click();
             }
-        }catch (Exception e){
+        }catch (Exception e){ */
             dataTablePage.inputBox.sendKeys("Test");
             dataTablePage.passBox.sendKeys("Tester");
             dataTablePage.buttonLogin.click();
             dataTablePage.orderButton.click();
-        }
 
+        //dataTablePage.orderButton.click();
 
     }
     @When("user selects product type {string}")
@@ -100,6 +114,6 @@ public class WebTableOrder_StepDefinitions extends DriverBase {
 
     @Then("user can logout")
     public void userCanLogout() {
-        //dataTablePage.logoutButton.click();
+        dataTablePage.logoutButton.click();
     }
 }
