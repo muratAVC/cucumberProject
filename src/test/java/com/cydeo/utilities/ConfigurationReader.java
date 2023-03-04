@@ -14,7 +14,7 @@ public class ConfigurationReader {
             fileInput.close();
         } catch (IOException e) {
             System.out.println("File Reading Error");
-            System.out.println(e);
+            //System.out.println(e);
         }
 
     }

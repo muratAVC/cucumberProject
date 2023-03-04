@@ -30,6 +30,7 @@ public class DataTables_StepDefinitions {
     @When("user enters user name {string}")
     public void user_enters_user_name(String string) {
         //dataTablePage.inputBox.sendKeys(string);
+
     }
     @When("user enters user password {string}")
     public void user_enters_user_password(String string) {
